@@ -10,12 +10,12 @@ const genGalleryGrid = galleryItems
   .join("");
 
 galleryEl.insertAdjacentHTML("beforeend", genGalleryGrid);
+let gallery = new SimpleLightbox(".gallery a");
 galleryEl.addEventListener("click", (e) => {
   e.preventDefault();
   if (!e.target.classList.contains("gallery__image")) {
     return;
   }
-  let gallery = new SimpleLightbox(".gallery a");
 
   gallery.on("show.simplelightbox", function () {
     gallery.defaultOptions.captionDelay = 250;
